@@ -1,0 +1,17 @@
+[gd_scene load_steps=7 format=3 uid="uid://cl3r267mggwue"]
+
+[ext_resource type="PackedScene" uid="uid://cxqihvipt363y" path="res://EnemyManager.tscn" id="1_17g6i"]
+[ext_resource type="Script" uid="uid://yavxsrhbhobg" path="res://GameBoard.cs" id="1_xh13x"]
+[ext_resource type="PackedScene" uid="uid://bdori5dv4t1pi" path="res://maps/level1.tscn" id="2_qxawf"]
+[ext_resource type="PackedScene" uid="uid://c0c21c1bgum0o" path="res://maps/level2.tscn" id="3_rs5it"]
+[ext_resource type="PackedScene" uid="uid://x5lm005ek5j7" path="res://Player.tscn" id="3_xh13x"]
+[ext_resource type="PackedScene" uid="uid://deqd41idjgc75" path="res://maps/level3.tscn" id="4_qxawf"]
+
+[node name="GameBoard" type="Node2D"]
+script = ExtResource("1_xh13x")
+_mapScenes = Array[PackedScene]([ExtResource("2_qxawf"), ExtResource("3_rs5it"), ExtResource("4_qxawf")])
+
+[node name="Player" parent="." instance=ExtResource("3_xh13x")]
+position = Vector2(96, 97)
+
+[node name="EnemyManager" parent="." instance=ExtResource("1_17g6i")]

@@ -1,0 +1,52 @@
+Main (Node2D)  # Nodo raíz
+│
+├── TileMapLayer (TileMap)  # Mapa del juego
+│
+├── Player (CharacterBody2D)  # Jugador principal
+│   │
+│   ├── AnimatedSprite2D  # Sprite animado
+│   │
+│   ├── MovementSystem (Node2D)  # Control de movimiento
+│   │   └── (Script: PlayerMovement.cs)
+│   │
+│   └── WeaponSystem (Node2D)  # Sistema de armas (Script: PlayerWeaponSystem.cs)
+│       │
+│       ├── BasicWeapon (Node2D)  # (Script: BasicWeapon.cs)
+│       │   ├── Sprite2D (Opcional: visual del arma)
+│       │   └── ShootPoint (Marker2D)  # Punto de origen de disparos
+│       │
+│       └── ExplosiveWeapon (Node2D)  # (Script: ExplosiveWeapon.cs)
+│           ├── Sprite2D (Opcional)
+│           └── ShootPoint (Marker2D)
+│
+├── ProjectileManager (Node2D)  # (Script: ProjectileManager.cs)
+│   │
+│   ├── BasicMissile (CharacterBody2D)  # (Script: BasicProjectile.cs)
+│   │   ├── Sprite2D
+│   │   ├── CollisionShape2D
+│   │   └── Timer
+│   │
+│   └── ExplosiveMissile (CharacterBody2D)  # (Script: ExplosiveProjectile.cs)
+│       ├── Sprite2D
+│       ├── CollisionShape2D
+│       ├── Timer
+│       └── ExplosionArea (Area2D)
+│
+├── EnemyManager (Node2D)  # (Script: EnemyManager.cs)
+│   │
+│   └── Enemy (CharacterBody2D)  # (Script: Enemy.cs)
+│       ├── Sprite2D
+│       ├── CollisionShape2D
+│       ├── HealthBar (ProgressBar)
+│       └── DetectionArea (Area2D)
+│
+└── EffectsManager (Node2D)  # (Script: EffectsManager.cs)
+    │
+    ├── ExplosionEffect (Node2D)  # (Script: ExplosionEffect.cs)
+    │   ├── AnimatedSprite2D
+    │   ├── Timer
+    │   └── SoundPlayer
+    │
+    └── HitEffect (Node2D)  # Efecto de golpe
+        ├── AnimatedSprite2D
+        └── Timer

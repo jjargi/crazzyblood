@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "CrazzyBlood": {
+      "commandName": "Project"
+    },
+    "Perfil 1": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\juanj\\OneDrive\\Documentos\\Godot_v4.4-stable_mono_win64\\Godot_v4.4-stable_mono_win64.exe",
+      "commandLineArgs": "--path, --verbose\r\n",
+      "workingDirectory": ".",
+      "nativeDebugging": true
+    }
+  }
+}

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://li66lfdd1i2h"]
+
+[ext_resource type="Texture2D" uid="uid://dl82fveeqckge" path="res://nuclear.png" id="1_lk70c"]
+[ext_resource type="Script" uid="uid://y20wjketfsp3" path="res://Projectile/NuclearProjectile.cs" id="1_ovp47"]
+[ext_resource type="PackedScene" uid="uid://4em8t0e75sot" path="res://ExplosionEffect.tscn" id="2_je0aa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wcjpk"]
+radius = 26.6833
+
+[node name="NuclearProjectile" type="Area2D"]
+script = ExtResource("1_ovp47")
+ExplosionEffect = ExtResource("2_je0aa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lk70c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wcjpk")
+
+[node name="Timer" type="Timer" parent="."]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cklrynbljn5vg"]
+
+[ext_resource type="Script" uid="uid://dvbpwypom2hib" path="res://weapons/ExplosiveWeapon.cs" id="1_2085g"]
+[ext_resource type="Texture2D" uid="uid://c3gtp62m5rxp4" path="res://rocketlauncher.png" id="1_douxu"]
+[ext_resource type="PackedScene" uid="uid://yuyu2cn784bi" path="res://ExplosiveProjectile.tscn" id="2_dxat3"]
+
+[node name="ExplosiveWeapon" type="Node2D"]
+script = ExtResource("1_2085g")
+AreaOfEffectDamage = null
+ExplosionRadius = null
+ProjectileSpeed = null
+ProjectileScene = ExtResource("2_dxat3")
+FireRate = null
+BaseDamage = null
+ProjectileSpeed = null
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_douxu")
+metadata/_edit_group_ = true
+
+[node name="ShootPoint" type="Marker2D" parent="."]
+metadata/_edit_group_ = true

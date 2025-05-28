@@ -1,0 +1,17 @@
+/scripts
+├── player/
+│   ├── Player.cs
+│   ├── PlayerMovement.cs
+│   └── weapons/
+│       ├── PlayerWeaponSystem.cs
+│       ├── BaseWeapon.cs
+│       ├── BasicWeapon.cs
+│       └── ExplosiveWeapon.cs
+├── projectiles/
+│   ├── ProjectileManager.cs
+│   ├── BaseProjectile.cs
+│   ├── BasicProjectile.cs
+│   └── ExplosiveProjectile.cs
+└── enemies/
+    ├── EnemyManager.cs
+    └── Enemy.cs
