@@ -19,6 +19,7 @@ public partial class GameBoard : Node2D
     private Timer _levelDelayTimer;
     private Label _levelTransitionLabel;
     private double _levelStartTime; // Añade esta variable al inicio con las otras variables de clase
+
     public override void _Ready()
     {
         _player = GetNode<Player>("Player");
@@ -102,11 +103,11 @@ public partial class GameBoard : Node2D
     {
         return new DifficultySettings
         {
-            //EnemyHealthMultiplier = 1 + (_currentLevel * 0.2f),
-            EnemyHealthMultiplier = 1 + (_currentLevel * 1f),
-            EnemySpeedMultiplier = 1 + (_currentLevel * 0.1f),
-            SpawnRateMultiplier = Mathf.Max(0.5f, 1 - (_currentLevel * 0.05f)),
-            EnemyDamageMultiplier = 1 + (_currentLevel * 0.15f)
+            EnemyHealthMultiplier = _currentLevel * 1f,
+            EnemySpeedMultiplier = Mathf.Max(0.1f, 4 - (_currentLevel * 0.5f)),
+            SpawnRateMultiplier = Mathf.Max(0.5f, 4 - (_currentLevel * 0.5f)),
+            EnemyDamageMultiplier = 1 + (_currentLevel*0.1f),
+            EnemyAtackCooldownMultiplier = Mathf.Max(0.5f, 4 - (_currentLevel * 0.5f)),
         };
     }
 
@@ -148,22 +149,7 @@ public partial class GameBoard : Node2D
         }
     }
 
-    //private void AdvanceToNextLevel()
-    //{
-    //    _currentLevel++;
-    //    GD.Print($"¡Nivel {_currentLevel - 1} completado! Avanzando al nivel {_currentLevel} en 5 segundos...");
 
-    //    // Mostrar mensaje de transición
-    //    _levelTransitionLabel.Text = $"Nivel {_currentLevel - 1} completado.\nAvanzando al nivel {_currentLevel}...";
-    //    _levelTransitionLabel.Visible = true;
-
-    //    // Limpiar antes del retardo
-    //    //EffectManager.Instance?.ClearAllEffects(); // Asegúrate de que EffectManager esté correctamente inicializado
-    //    _enemyManager.ClearEnemies();
-
-    //    // Iniciar cuenta regresiva
-    //    _levelDelayTimer.Start();
-    //}
     private void AdvanceToNextLevel()
     {
         // Calcular valores
@@ -173,24 +159,35 @@ public partial class GameBoard : Node2D
         // Crear lista de enemigos
         var nextEnemies = new List<EnemyData>
     {
-        new EnemyData { Type = "Zombie", Count = 10 + _currentLevel,
-                       Health = 100 * (1 + _currentLevel * 0.2f),
-                       Damage = 20 * (1 + _currentLevel * 0.15f) },
-        new EnemyData { Type = "Araña", Count = 5 + _currentLevel/2,
-                       Health = 60 * (1 + _currentLevel * 0.15f),
-                       Damage = 30 * (1 + _currentLevel * 0.1f) }
+        new EnemyData {
+            Type = "Zombie",
+            Count = 10 + _currentLevel,
+            Health = 100 * (1 + _currentLevel * 0.2f),
+            Damage = 20 * (1 + _currentLevel * 0.15f)
+        },
+        new EnemyData {
+            Type = "Araña",
+            Count = 5 + _currentLevel/2,
+            Health = 60 * (1 + _currentLevel * 0.15f),
+            Damage = 30 * (1 + _currentLevel * 0.1f)
+        }
     };
 
-        // Mostrar transición
+        // Mostrar transición (delegamos el timing a LevelTransition)
         var transition = GD.Load<PackedScene>("res://LevelTransition.tscn").Instantiate<LevelTransition>();
         GetTree().Root.AddChild(transition);
-        transition.ShowTransition(_currentLevel, _currentLevel + 1, (float)levelTime, difficulty, nextEnemies);
-
-        _currentLevel++;
-        _enemyManager.ClearEnemies();
-
-        // Programar inicio del siguiente nivel
-        GetTree().CreateTimer(3.0).Timeout += InitializeLevel;
+        transition.ShowTransition(
+            currentLevel: _currentLevel,
+            nextLevel: _currentLevel + 1,
+            levelTime: (float)levelTime,
+            difficulty: difficulty,
+            enemies: nextEnemies,
+            onComplete: () => {
+                _currentLevel++;
+                _enemyManager.ClearEnemies();
+                InitializeLevel();
+            }
+        );
     }
     private void OnLevelDelayFinished()
     {
@@ -224,5 +221,6 @@ public struct DifficultySettings
     public float EnemySpeedMultiplier;
     public float SpawnRateMultiplier;
     public float EnemyDamageMultiplier;
+    public float EnemyAtackCooldownMultiplier;
 }
 

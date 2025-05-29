@@ -85,21 +85,14 @@ public partial class EnemyManager : Node2D
 
         // Spawnear nuevo enemigo
         var enemy = EnemyScene.Instantiate<Enemy>();
-        //enemy.Initialize(_player, new EnemyStats, _tileMap
-        //{
-        //    Speed = GD.RandRange(80f, 120f) * _currentDifficulty.EnemySpeedMultiplier,
-        //    Health = 1,
-        //    Damage = (int)(1 * _currentDifficulty.EnemyDamageMultiplier),
-        //    AttackCooldown = GD.RandRange(1.5f, 3f),
-        //    ProjectileSpeed = GD.RandRange(150f, 250f),
-        //    TileSize = _tileMap.TileSet.TileSize.X,
-        //});
         var stats = new EnemyStats
         {
-            Speed = GD.RandRange(80f, 120f) * _currentDifficulty.EnemySpeedMultiplier,
+            //Speed = GD.RandRange(80f, 120f) * _currentDifficulty.EnemySpeedMultiplier,
+            Speed = (int)( _currentDifficulty.EnemySpeedMultiplier),
             Health = (int)_currentDifficulty.EnemyHealthMultiplier,
-            Damage = (int)(1 * _currentDifficulty.EnemyDamageMultiplier),
-            AttackCooldown = GD.RandRange(1.5f, 3f),
+            Damage = (int)(_currentDifficulty.EnemyDamageMultiplier),
+            //AttackCooldown = GD.RandRange(1.5f, 3f),
+            AttackCooldown = _currentDifficulty.EnemyAtackCooldownMultiplier,
             ProjectileSpeed = GD.RandRange(150f, 250f),
             TileSize = _tileMap.TileSet.TileSize.X,
         };

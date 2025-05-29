@@ -7,20 +7,28 @@
       "RelativeMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|solutionrelative:gameboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\LevelTransition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:LevelTransition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|c:\\users\\juanj\\onedrive\\documentos\\crazzyblood\\enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|solutionrelative:enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|c:\\users\\juanj\\onedrive\\documentos\\crazzyblood\\enemy\\enemymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|solutionrelative:enemy\\enemymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|c:\\users\\juanj\\onedrive\\documentos\\crazzyblood\\enemy\\enemyconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|solutionrelative:enemy\\enemyconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|c:\\users\\juanj\\onedrive\\documentos\\crazzyblood\\leveltransition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|solutionrelative:leveltransition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|c:\\users\\juanj\\onedrive\\documentos\\crazzyblood\\weapons\\effectmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|solutionrelative:weapons\\effectmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|c:\\users\\juanj\\onedrive\\documentos\\crazzyblood\\enemyprojectile\\enemyprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|solutionrelative:enemyprojectile\\enemyprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|c:\\users\\juanj\\onedrive\\documentos\\crazzyblood\\enemy\\enemystats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|solutionrelative:enemy\\enemystats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|c:\\users\\juanj\\onedrive\\documentos\\crazzyblood\\projectile\\explosiveprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|solutionrelative:projectile\\explosiveprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|c:\\users\\juanj\\onedrive\\documentos\\crazzyblood\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|c:\\users\\juanj\\onedrive\\documentos\\crazzyblood\\projectile\\basicprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|solutionrelative:projectile\\basicprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|c:\\users\\juanj\\onedrive\\documentos\\crazzyblood\\projectile\\explosiveprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|solutionrelative:projectile\\explosiveprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|c:\\users\\juanj\\onedrive\\documentos\\crazzyblood\\projectile\\baseprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,23 +55,11 @@
       "RelativeMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|solutionrelative:player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|c:\\users\\juanj\\onedrive\\documentos\\crazzyblood\\enemyprojectile\\enemyprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|solutionrelative:enemyprojectile\\enemyprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|c:\\users\\juanj\\onedrive\\documentos\\crazzyblood\\enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|solutionrelative:enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|c:\\users\\juanj\\onedrive\\documentos\\crazzyblood\\projectile\\explosioneffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|solutionrelative:projectile\\explosioneffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\juanj\\AppData\\Local\\Temp\\.vsdbgsrc\\cb8c675024ec91b9a6fc10d7839520008a7238c081242c8bb2528415dcf2693e\\DelegateUtils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|c:\\users\\juanj\\onedrive\\documentos\\crazzyblood\\enemy\\enemystats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56233432-B791-4C44-8023-BE63E01F646A}|CrazzyBlood.csproj|solutionrelative:enemy\\enemystats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\juanj\\AppData\\Local\\Temp\\.vsdbgsrc\\4769abab570ba9846f7f905593ab149b9f632c0350ac258fa9da4c05d48a0558\\GodotObject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -79,45 +71,16 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 1040,
-          "SelectedChildIndex": 3,
+          "DockedWidth": 1004,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LevelTransition.cs",
-              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\LevelTransition.cs",
-              "RelativeDocumentMoniker": "LevelTransition.cs",
-              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\LevelTransition.cs",
-              "RelativeToolTip": "LevelTransition.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAYwDkAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T07:36:17.512Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EffectManager.cs",
-              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\weapons\\EffectManager.cs",
-              "RelativeDocumentMoniker": "weapons\\EffectManager.cs",
-              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\weapons\\EffectManager.cs",
-              "RelativeToolTip": "weapons\\EffectManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T15:58:40.371Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EnemyConfig.cs",
-              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Enemy\\EnemyConfig.cs",
-              "RelativeDocumentMoniker": "Enemy\\EnemyConfig.cs",
-              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Enemy\\EnemyConfig.cs",
-              "RelativeToolTip": "Enemy\\EnemyConfig.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T07:05:38.768Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
@@ -127,14 +90,27 @@
               "RelativeDocumentMoniker": "GameBoard.cs",
               "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\GameBoard.cs",
               "RelativeToolTip": "GameBoard.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAYwB4AAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAAAJcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T08:03:31.004Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
+              "Title": "LevelTransition.cs",
+              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\LevelTransition.cs",
+              "RelativeDocumentMoniker": "LevelTransition.cs",
+              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\LevelTransition.cs",
+              "RelativeToolTip": "LevelTransition.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAQwEYAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T07:36:17.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ExplosiveProjectile.cs",
               "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Projectile\\ExplosiveProjectile.cs",
               "RelativeDocumentMoniker": "Projectile\\ExplosiveProjectile.cs",
@@ -142,25 +118,40 @@
               "RelativeToolTip": "Projectile\\ExplosiveProjectile.cs",
               "ViewState": "AgIAAD4AAAAAAAAAAAAQwDkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T20:46:52.231Z"
+              "WhenOpened": "2025-05-11T20:46:52.231Z",
+              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 546,
+          "DockedWidth": 582,
           "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "BasicProjectile.cs",
-              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Projectile\\BasicProjectile.cs",
-              "RelativeDocumentMoniker": "Projectile\\BasicProjectile.cs",
-              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Projectile\\BasicProjectile.cs",
-              "RelativeToolTip": "Projectile\\BasicProjectile.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAhwBEAAAAKAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "EnemyProjectile.cs",
+              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\EnemyProjectile\\EnemyProjectile.cs",
+              "RelativeDocumentMoniker": "EnemyProjectile\\EnemyProjectile.cs",
+              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\EnemyProjectile\\EnemyProjectile.cs",
+              "RelativeToolTip": "EnemyProjectile\\EnemyProjectile.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T17:22:32.574Z"
+              "WhenOpened": "2025-05-19T07:24:09.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Enemy\\Enemy.cs",
+              "RelativeDocumentMoniker": "Enemy\\Enemy.cs",
+              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Enemy\\Enemy.cs",
+              "RelativeToolTip": "Enemy\\Enemy.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwCgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T07:32:26.269Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -170,74 +161,27 @@
               "RelativeDocumentMoniker": "Enemy\\EnemyManager.cs",
               "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Enemy\\EnemyManager.cs",
               "RelativeToolTip": "Enemy\\EnemyManager.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAgwGMAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAEwGkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-08T07:30:45.493Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "PlayerMovement.cs",
-              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Player\\PlayerMovement.cs",
-              "RelativeDocumentMoniker": "Player\\PlayerMovement.cs",
-              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Player\\PlayerMovement.cs",
-              "RelativeToolTip": "Player\\PlayerMovement.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAWwDIAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T05:42:55.32Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "NuclearProjectile.cs",
-              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Projectile\\NuclearProjectile.cs",
-              "RelativeDocumentMoniker": "Projectile\\NuclearProjectile.cs",
-              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Projectile\\NuclearProjectile.cs",
-              "RelativeToolTip": "Projectile\\NuclearProjectile.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAgwFQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T15:04:26.484Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BaseProjectile.cs",
-              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Projectile\\BaseProjectile.cs",
-              "RelativeDocumentMoniker": "Projectile\\BaseProjectile.cs",
-              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Projectile\\BaseProjectile.cs",
-              "RelativeToolTip": "Projectile\\BaseProjectile.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAIwBkAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T14:42:14.424Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ExplosionEffect.cs",
-              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Projectile\\ExplosionEffect.cs",
-              "RelativeDocumentMoniker": "Projectile\\ExplosionEffect.cs",
-              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Projectile\\ExplosionEffect.cs",
-              "RelativeToolTip": "Projectile\\ExplosionEffect.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T19:17:24.074Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Player\\Player.cs",
-              "RelativeDocumentMoniker": "Player\\Player.cs",
-              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Player\\Player.cs",
-              "RelativeToolTip": "Player\\Player.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABEAAAAlAAAAAAAAAA==",
+              "Title": "EnemyStats.cs",
+              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Enemy\\EnemyStats.cs",
+              "RelativeDocumentMoniker": "Enemy\\EnemyStats.cs",
+              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Enemy\\EnemyStats.cs",
+              "RelativeToolTip": "Enemy\\EnemyStats.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T05:48:16.616Z"
+              "WhenOpened": "2025-05-19T07:17:01.106Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "WeaponSystem.cs",
               "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\weapons\\WeaponSystem.cs",
               "RelativeDocumentMoniker": "weapons\\WeaponSystem.cs",
@@ -249,43 +193,79 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "EnemyProjectile.cs",
-              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\EnemyProjectile\\EnemyProjectile.cs",
-              "RelativeDocumentMoniker": "EnemyProjectile\\EnemyProjectile.cs",
-              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\EnemyProjectile\\EnemyProjectile.cs",
-              "RelativeToolTip": "EnemyProjectile\\EnemyProjectile.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAuwCYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Player\\Player.cs",
+              "RelativeDocumentMoniker": "Player\\Player.cs",
+              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Player\\Player.cs",
+              "RelativeToolTip": "Player\\Player.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABEAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T07:24:09.096Z"
+              "WhenOpened": "2025-05-08T05:48:16.616Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "Enemy.cs",
-              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Enemy\\Enemy.cs",
-              "RelativeDocumentMoniker": "Enemy\\Enemy.cs",
-              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Enemy\\Enemy.cs",
-              "RelativeToolTip": "Enemy\\Enemy.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAA1wB8AAAA8AAAAAAAAAA==",
+              "Title": "ExplosionEffect.cs",
+              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Projectile\\ExplosionEffect.cs",
+              "RelativeDocumentMoniker": "Projectile\\ExplosionEffect.cs",
+              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Projectile\\ExplosionEffect.cs",
+              "RelativeToolTip": "Projectile\\ExplosionEffect.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T07:32:26.269Z"
+              "WhenOpened": "2025-05-18T19:17:24.074Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "EnemyStats.cs",
-              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Enemy\\EnemyStats.cs",
-              "RelativeDocumentMoniker": "Enemy\\EnemyStats.cs",
-              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Enemy\\EnemyStats.cs",
-              "RelativeToolTip": "Enemy\\EnemyStats.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAADwvxUAAAARAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "BaseProjectile.cs",
+              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Projectile\\BaseProjectile.cs",
+              "RelativeDocumentMoniker": "Projectile\\BaseProjectile.cs",
+              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Projectile\\BaseProjectile.cs",
+              "RelativeToolTip": "Projectile\\BaseProjectile.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAIwBkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T07:17:01.106Z"
+              "WhenOpened": "2025-05-16T14:42:14.424Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 10,
+              "Title": "NuclearProjectile.cs",
+              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Projectile\\NuclearProjectile.cs",
+              "RelativeDocumentMoniker": "Projectile\\NuclearProjectile.cs",
+              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Projectile\\NuclearProjectile.cs",
+              "RelativeToolTip": "Projectile\\NuclearProjectile.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAgwFQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T15:04:26.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PlayerMovement.cs",
+              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Player\\PlayerMovement.cs",
+              "RelativeDocumentMoniker": "Player\\PlayerMovement.cs",
+              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Player\\PlayerMovement.cs",
+              "RelativeToolTip": "Player\\PlayerMovement.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAWwDIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T05:42:55.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BasicProjectile.cs",
+              "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Projectile\\BasicProjectile.cs",
+              "RelativeDocumentMoniker": "Projectile\\BasicProjectile.cs",
+              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Projectile\\BasicProjectile.cs",
+              "RelativeToolTip": "Projectile\\BasicProjectile.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAhwBEAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T17:22:32.574Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "DelegateUtils.cs",
               "DocumentMoniker": "C:\\Users\\juanj\\AppData\\Local\\Temp\\.vsdbgsrc\\cb8c675024ec91b9a6fc10d7839520008a7238c081242c8bb2528415dcf2693e\\DelegateUtils.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\cb8c675024ec91b9a6fc10d7839520008a7238c081242c8bb2528415dcf2693e\\DelegateUtils.cs",
@@ -298,7 +278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 15,
               "Title": "GodotObject.cs",
               "DocumentMoniker": "C:\\Users\\juanj\\AppData\\Local\\Temp\\.vsdbgsrc\\4769abab570ba9846f7f905593ab149b9f632c0350ac258fa9da4c05d48a0558\\GodotObject.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\4769abab570ba9846f7f905593ab149b9f632c0350ac258fa9da4c05d48a0558\\GodotObject.cs",

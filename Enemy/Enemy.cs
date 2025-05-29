@@ -33,6 +33,8 @@ public partial class Enemy : CharacterBody2D
     {
         _player = player;
         MaxHealth = stats.Health;
+        JumpInterval = (float)stats.Speed;
+        AttackCooldown = (float)stats.AttackCooldown;
         //_stats = stats;
         _currentHealth = stats.Health;
         TileSize = stats.TileSize; // Recibimos el tamaño del tile

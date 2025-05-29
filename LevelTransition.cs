@@ -1,18 +1,3 @@
-//using Godot;
-//using System;
-
-//public partial class LevelTransition : CanvasLayer
-//{
-//	// Called when the node enters the scene tree for the first time.
-//	public override void _Ready()
-//	{
-//	}
-
-//	// Called every frame. 'delta' is the elapsed time since the previous frame.
-//	public override void _Process(double delta)
-//	{
-//	}
-//}
 using Godot;
 using System;
 using System.Collections.Generic;
@@ -51,8 +36,11 @@ public partial class LevelTransition : CanvasLayer
 
 
 
+    //public void ShowTransition(int currentLevel, int nextLevel, float levelTime,
+    //                         string difficulty, List<EnemyData> enemies)
+    //{
     public void ShowTransition(int currentLevel, int nextLevel, float levelTime,
-                             string difficulty, List<EnemyData> enemies)
+                        string difficulty, List<EnemyData> enemies, Action onComplete)
     {
         // Configurar textos
         _titleLabel.Text = $"Nivel {currentLevel} Completado!";
@@ -70,9 +58,17 @@ public partial class LevelTransition : CanvasLayer
 
         // Iniciar animación
         Visible = true;
-        _countdownBar.Value = 100;
-        _startTime = Time.GetTicksMsec();
-        _timer.Start(_duration);
+        //_countdownBar.Value = 100;
+        //_startTime = Time.GetTicksMsec();
+        //_timer.Start(_duration);
+        // Usar solo un temporizador
+        GetTree().CreateTween()
+            .TweenProperty(_countdownBar, "value", 0, 3.0f)
+            .From(100.0f)
+            .Finished += () => {
+                onComplete?.Invoke();
+                QueueFree();
+            };
     }
 
     public override void _Process(double delta)
