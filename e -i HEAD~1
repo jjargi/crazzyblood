@@ -1,0 +1,29 @@
+[33mcommit aadcc58d9f6f9a66ac20df46aed978f5b27420d2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: jjargi <juanjose_69691@hotmail.com>
+Date:   Thu May 29 09:23:31 2025 +0200
+
+    solucionado timer redundante en el advance to next level y resueltos algunos bug mas
+
+[33mcommit 2d81d5e0c19c479723b8c42927e0ced65460316e[m
+Author: jjargi <juanjose_69691@hotmail.com>
+Date:   Thu May 29 09:11:26 2025 +0200
+
+    solucionado timer redundante en el advance to next level y resueltos algunos bug mas
+
+[33mcommit d4a594d027d04bc4f7673cf12ebdb2a748affef0[m
+Author: jjargi <juanjose_69691@hotmail.com>
+Date:   Wed May 28 10:26:22 2025 +0200
+
+     transicion niveles hecha!
+
+[33mcommit d3635b793e0701dcd32a8e3313eb2842329ed799[m
+Author: jjargi <juanjose_69691@hotmail.com>
+Date:   Wed May 28 09:20:00 2025 +0200
+
+    contruyendo transicion niveles
+
+[33mcommit ae88ea60b3c0c1cda9f76cb84ca4ed660dc415fa[m
+Author: jjargi <juanjose_69691@hotmail.com>
+Date:   Wed May 28 08:28:23 2025 +0200
+
+    juegos basico enemigos y player simples

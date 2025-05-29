@@ -106,7 +106,7 @@ public partial class GameBoard : Node2D
             EnemyHealthMultiplier = _currentLevel * 1f,
             EnemySpeedMultiplier = Mathf.Max(0.1f, 4 - (_currentLevel * 0.5f)),
             SpawnRateMultiplier = Mathf.Max(0.5f, 4 - (_currentLevel * 0.5f)),
-            EnemyDamageMultiplier = 1 + (_currentLevel*0.1f),
+            EnemyDamageMultiplier = _currentLevel,
             EnemyAtackCooldownMultiplier = Mathf.Max(0.5f, 4 - (_currentLevel * 0.5f)),
         };
     }

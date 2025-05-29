@@ -71,7 +71,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 1004,
+          "DockedWidth": 852,
           "SelectedChildIndex": 2,
           "Children": [
             {
@@ -88,9 +88,9 @@
               "Title": "GameBoard.cs",
               "DocumentMoniker": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\GameBoard.cs",
               "RelativeDocumentMoniker": "GameBoard.cs",
-              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\GameBoard.cs",
-              "RelativeToolTip": "GameBoard.cs",
-              "ViewState": "AgIAAJQAAAAAAAAAAAAAAJcAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\GameBoard.cs*",
+              "RelativeToolTip": "GameBoard.cs*",
+              "ViewState": "AgIAAFYAAAAAAAAAAADwv2wAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T08:03:31.004Z",
               "EditorCaption": ""
@@ -105,8 +105,7 @@
               "RelativeToolTip": "LevelTransition.cs",
               "ViewState": "AgIAAEsAAAAAAAAAAAAQwEYAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T07:36:17.512Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T07:36:17.512Z"
             },
             {
               "$type": "Document",
@@ -118,13 +117,12 @@
               "RelativeToolTip": "Projectile\\ExplosiveProjectile.cs",
               "ViewState": "AgIAAD4AAAAAAAAAAAAQwDkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T20:46:52.231Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T20:46:52.231Z"
             }
           ]
         },
         {
-          "DockedWidth": 582,
+          "DockedWidth": 734,
           "SelectedChildIndex": 1,
           "Children": [
             {
@@ -137,8 +135,7 @@
               "RelativeToolTip": "EnemyProjectile\\EnemyProjectile.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAQwBgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T07:24:09.096Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T07:24:09.096Z"
             },
             {
               "$type": "Document",
@@ -148,7 +145,7 @@
               "RelativeDocumentMoniker": "Enemy\\Enemy.cs",
               "ToolTip": "C:\\Users\\juanj\\OneDrive\\Documentos\\crazzyblood\\Enemy\\Enemy.cs",
               "RelativeToolTip": "Enemy\\Enemy.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAQwCgAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwCMAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-08T07:32:26.269Z",
               "EditorCaption": ""
@@ -163,8 +160,7 @@
               "RelativeToolTip": "Enemy\\EnemyManager.cs",
               "ViewState": "AgIAAFoAAAAAAAAAAAAEwGkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T07:30:45.493Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T07:30:45.493Z"
             },
             {
               "$type": "Document",
@@ -176,8 +172,7 @@
               "RelativeToolTip": "Enemy\\EnemyStats.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T07:17:01.106Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T07:17:01.106Z"
             },
             {
               "$type": "Document",

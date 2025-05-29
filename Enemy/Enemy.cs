@@ -33,6 +33,7 @@ public partial class Enemy : CharacterBody2D
     {
         _player = player;
         MaxHealth = stats.Health;
+        Damage = stats.Damage;
         JumpInterval = (float)stats.Speed;
         AttackCooldown = (float)stats.AttackCooldown;
         //_stats = stats;
