@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://btids5uoi3rnv"]
+[gd_scene load_steps=5 format=3 uid="uid://btids5uoi3rnv"]
 
 [ext_resource type="Script" uid="uid://crdfk62c0ev7e" path="res://LevelTransition.cs" id="1_hl5l1"]
+[ext_resource type="Texture2D" uid="uid://crl3uei17eu2o" path="res://progressbar_under.png" id="2_kqtbd"]
+[ext_resource type="Texture2D" uid="uid://bu4rqvwnfyrf0" path="res://progressbar_over2.png" id="3_kqtbd"]
+[ext_resource type="Texture2D" uid="uid://b4k34q5leny3g" path="res://progressbar_progress.png" id="4_jgew0"]
 
 [node name="LevelTransition" type="CanvasLayer"]
 script = ExtResource("1_hl5l1")
@@ -37,3 +40,10 @@ horizontal_alignment = 1
 
 [node name="CountdownBar" type="TextureProgressBar" parent="Panel/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+page = 1.0
+fill_mode = 1
+texture_under = ExtResource("2_kqtbd")
+texture_over = ExtResource("3_kqtbd")
+texture_progress = ExtResource("4_jgew0")

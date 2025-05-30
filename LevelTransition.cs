@@ -12,7 +12,7 @@ public partial class LevelTransition : CanvasLayer
 
     private Timer _timer;
     private double _startTime;
-    private float _duration = 3f;
+    private float _duration = 4f;
 
 
     public override void _Ready()
@@ -33,12 +33,6 @@ public partial class LevelTransition : CanvasLayer
         _timer.Timeout += OnTimeout;
     }
 
-
-
-
-    //public void ShowTransition(int currentLevel, int nextLevel, float levelTime,
-    //                         string difficulty, List<EnemyData> enemies)
-    //{
     public void ShowTransition(int currentLevel, int nextLevel, float levelTime,
                         string difficulty, List<EnemyData> enemies, Action onComplete)
     {
@@ -58,27 +52,41 @@ public partial class LevelTransition : CanvasLayer
 
         // Iniciar animación
         Visible = true;
-        //_countdownBar.Value = 100;
-        //_startTime = Time.GetTicksMsec();
-        //_timer.Start(_duration);
-        // Usar solo un temporizador
-        GetTree().CreateTween()
-            .TweenProperty(_countdownBar, "value", 0, 3.0f)
-            .From(100.0f)
-            .Finished += () => {
-                onComplete?.Invoke();
-                QueueFree();
-            };
+        // Asegurarse que todos los elementos están visibles
+        _titleLabel.Show();
+        _infoLabel.Show();
+        _enemiesLabel.Show();
+        _nextLevelLabel.Show();
+        _countdownBar.Show();
+
+
+        // Configurar barra de progreso
+        // Configurar valores iniciales
+        _countdownBar.MaxValue = 100;
+        _countdownBar.Value = 100;
+        // Crear la animación
+        var tween = GetTree().CreateTween();
+        tween.TweenProperty(_countdownBar, "value", 0, _duration)
+             .SetTrans(Tween.TransitionType.Linear)
+             .SetEase(Tween.EaseType.InOut);
+
+        tween.Finished += () => {
+            onComplete?.Invoke();
+            QueueFree();
+        };
+
     }
 
     public override void _Process(double delta)
     {
-        if (!_timer.IsStopped())
-        {
-            double elapsed = (Time.GetTicksMsec() - _startTime) / 1000.0;
-            float progress = (float)(elapsed / _duration);
-            _countdownBar.Value = 100 - (progress * 100);
-        }
+        if (_countdownBar != null)
+            GD.Print("CountdownBar Value: ", _countdownBar.Value);
+        //if (!_timer.IsStopped())
+        //{
+        //    double elapsed = (Time.GetTicksMsec() - _startTime) / 1000.0;
+        //    float progress = (float)(elapsed / _duration);
+        //    _countdownBar.Value = 100 - (progress * 100);
+        //}
     }
 
     private void OnTimeout()
