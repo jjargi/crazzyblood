@@ -9,6 +9,7 @@ public partial class GameBoard : Node2D
     [Export] private int _wavesPerLevel = 2;
 
     private TileMapLayer _currentMap;
+    private int _currentMapIndex = 0; // Añade esta variable
     private Player _player;
     private EnemyManager _enemyManager;
     private int _currentWave = 0;
@@ -77,10 +78,13 @@ public partial class GameBoard : Node2D
             _currentMap.QueueFree();
         }
 
-        int mapIndex = (_currentLevel - 1) % _mapScenes.Length;
-        _currentMap = _mapScenes[mapIndex].Instantiate<TileMapLayer>();
+        _currentMapIndex = (_currentLevel - 1) % _mapScenes.Length;
+        _currentMap = _mapScenes[_currentMapIndex].Instantiate<TileMapLayer>();
         AddChild(_currentMap);
         MoveChild(_currentMap, 0);
+
+        // Pasar el índice del mapa al EnemyManager
+        _enemyManager.SetCurrentMapIndex(_currentMapIndex);
 
         _player.SetTileMap(_currentMap);
         _enemyManager.Reinitialize(_player, _currentMap);
@@ -130,17 +134,16 @@ public partial class GameBoard : Node2D
     private void OnEnemyDefeatedInWave()
     {
         _totalEnemiesDefeatedInWave++;
-        int remainingEnemies = _enemyManager.GetEnemyCount();
 
-        GD.Print($"Enemigo derrotado. Total derrotados: {_totalEnemiesDefeatedInWave}/{_enemiesPerWave}. Restantes: {remainingEnemies}");
-
-        if (_totalEnemiesDefeatedInWave >= _enemiesPerWave && remainingEnemies == 0)
+        if (_totalEnemiesDefeatedInWave >= _enemiesPerWave && _enemyManager.GetEnemyCount() == 0)
         {
-            GD.Print($"¡Oleada {_currentWave} completada!");
-
             if (_currentWave >= _wavesPerLevel)
             {
-                AdvanceToNextLevel();
+                // Solo avanzar si no hay jefe o fue derrotado
+                if (!_enemyManager.HasActiveBoss() || _enemyManager.IsBossDefeated())
+                {
+                    AdvanceToNextLevel();
+                }
             }
             else
             {
@@ -156,7 +159,8 @@ public partial class GameBoard : Node2D
         double levelTime = (Time.GetTicksMsec() - _levelStartTime) / 1000.0;
         string difficulty = GetDifficultyName(_currentLevel + 1);
 
-        // Crear lista de enemigos
+        // Crear lista de enemigos incluyendo información del próximo jefe
+        int nextBossIndex = _currentLevel % _enemyManager.BossScenes.Length;
         var nextEnemies = new List<EnemyData>
     {
         new EnemyData {
@@ -166,10 +170,10 @@ public partial class GameBoard : Node2D
             Damage = 20 * (1 + _currentLevel * 0.15f)
         },
         new EnemyData {
-            Type = "Araña",
-            Count = 5 + _currentLevel/2,
-            Health = 60 * (1 + _currentLevel * 0.15f),
-            Damage = 30 * (1 + _currentLevel * 0.1f)
+            Type = "Próximo Jefe",
+            Count = 1,
+            Health = 500 * (1 + _currentLevel * 0.3f),
+            Damage = 50 * (1 + _currentLevel * 0.2f)
         }
     };
 
@@ -182,6 +186,7 @@ public partial class GameBoard : Node2D
             levelTime: (float)levelTime,
             difficulty: difficulty,
             enemies: nextEnemies,
+            bossIndex: nextBossIndex, // Pasar índice del próximo jefe
             onComplete: () => {
                 _currentLevel++;
                 _enemyManager.ClearEnemies();

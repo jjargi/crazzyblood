@@ -1,48 +1,59 @@
-
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class EnemyManager : Node2D
 {
+    // Campos exportados
     [Export] public PackedScene EnemyScene { get; set; }
     [Export] public int MaxEnemies = 10;
     [Export] public float SpawnInterval = 2.0f;
-    [Export] public float MinDistanceToPlayer = 5f; // Distancia mínima en celdas
-                                                    // Variables de estado
-    private TileMapLayer _currentMap;
+    [Export] public float MinDistanceToPlayer = 5f;
+    [Export] private PackedScene[] _bossScenes;
+
+    // Propiedades públicas
+    public PackedScene[] BossScenes => _bossScenes;
+
+    // Campos privados
     private Player _player;
-    private EnemyManager _enemyManager;
-    private int _currentWave = 0;
-    private int _currentLevel = 1;
-    private int _enemiesDefeatedInCurrentWave = 0;
     private TileMapLayer _tileMap;
-    private List<Enemy> _enemies = new();
     private Timer _spawnTimer;
     private DifficultySettings _currentDifficulty;
-    public event Action EnemyDefeated;
+    private List<Enemy> _enemies = new List<Enemy>();
+    private bool _bossSpawned = false;
+    private int _currentBossIndex = 0;
+
+    // Variables de control de oleadas
     private int _enemiesSpawnedThisWave = 0;
     private int _totalEnemiesForWave = 0;
+    private int _enemiesDefeatedThisWave = 0;
     private bool _isLastWave = false;
-    private int _enemiesSpawned = 0;
     private bool _waveActive = false;
 
-    private void OnEnemyDeath(Enemy enemy)
-    {
-        _enemies.Remove(enemy);
-        _enemiesDefeatedThisWave++;
-        EnemyDefeated?.Invoke();
-        GD.Print($"Enemigo eliminado. Derrotados: {_enemiesDefeatedThisWave}/{_totalEnemiesForWave}");
-    }
-    public void Reinitialize(Player player, TileMapLayer tileMap)
+    // Eventos
+    public event Action EnemyDefeated;
+
+    public void Initialize(Player player, TileMapLayer tileMap)
     {
         _player = player;
         _tileMap = tileMap;
+
+        _spawnTimer = new Timer();
+        AddChild(_spawnTimer);
+        _spawnTimer.Timeout += OnSpawnTimerTimeout;
     }
-    private int _enemiesDefeatedThisWave = 0;
+
+    public void Reinitialize(Player player, TileMapLayer tileMap)
+    {
+        ClearEnemies();
+        Initialize(player, tileMap);
+    }
+
     public void StartWave(int enemyCount, DifficultySettings difficulty, bool isLastWave = false)
     {
-        ClearEnemies(); // Limpiar enemigos previos
+        ClearEnemies();
+        _bossSpawned = false;
 
         _totalEnemiesForWave = enemyCount;
         _enemiesSpawnedThisWave = 0;
@@ -51,61 +62,115 @@ public partial class EnemyManager : Node2D
         _currentDifficulty = difficulty;
         _isLastWave = isLastWave;
 
-        GD.Print($"Preparando oleada. Enemigos a generar: {_totalEnemiesForWave}");
+        GD.Print($"Iniciando oleada {(isLastWave ? "FINAL" : "")}. Enemigos: {enemyCount}");
 
-        // Configurar timer
         _spawnTimer.WaitTime = SpawnInterval * difficulty.SpawnRateMultiplier;
         _spawnTimer.Start();
     }
-    public void Initialize(Player player, TileMapLayer tileMap)
-    {
-        _player = player;
-        _tileMap = tileMap;
 
-        _spawnTimer = new Timer();
-        AddChild(_spawnTimer);
-        _spawnTimer.Timeout += SpawnEnemy;
-        _spawnTimer.Start(SpawnInterval);
-    }
-    private void SpawnEnemy()
+    private void OnSpawnTimerTimeout()
     {
-        // Si ya hemos spawnado todos los enemigos de la oleada
-        if (_enemiesSpawned >= _totalEnemiesForWave)
+        if (_enemiesSpawnedThisWave >= _totalEnemiesForWave)
         {
             _spawnTimer.Stop();
             _waveActive = false;
+
+            if (_isLastWave && _enemies.Count == 0 && !_bossSpawned)
+            {
+                SpawnBoss(_currentBossIndex);
+            }
             return;
         }
 
-        // Si hay muchos enemigos activos, esperar antes de spawnear más
         if (_enemies.Count >= MaxEnemies)
-        {
             return;
-        }
 
-        // Spawnear nuevo enemigo
+        SpawnEnemy();
+    }
+
+    private void SpawnEnemy()
+    {
         var enemy = EnemyScene.Instantiate<Enemy>();
         var stats = new EnemyStats
         {
-            //Speed = GD.RandRange(80f, 120f) * _currentDifficulty.EnemySpeedMultiplier,
-            Speed = (int)( _currentDifficulty.EnemySpeedMultiplier),
+            Speed = (int)_currentDifficulty.EnemySpeedMultiplier,
             Health = (int)_currentDifficulty.EnemyHealthMultiplier,
-            Damage = (int)(_currentDifficulty.EnemyDamageMultiplier),
-            //AttackCooldown = GD.RandRange(1.5f, 3f),
+            Damage = (int)_currentDifficulty.EnemyDamageMultiplier,
             AttackCooldown = _currentDifficulty.EnemyAtackCooldownMultiplier,
             ProjectileSpeed = GD.RandRange(150f, 250f),
-            TileSize = _tileMap.TileSet.TileSize.X,
+            TileSize = (int)_tileMap.TileSet.TileSize.X,
         };
 
         enemy.Initialize(_player, stats, _tileMap);
-
         enemy.Death += OnEnemyDeath;
         enemy.GlobalPosition = GetCenteredPositionInRandomValidTile();
+
         AddChild(enemy);
         _enemies.Add(enemy);
-        _enemiesSpawned++;
+        _enemiesSpawnedThisWave++;
+    }
 
-        GD.Print($"Enemigos spawnados: {_enemiesSpawned}/{_totalEnemiesForWave} | Activos: {_enemies.Count}");
+    private void OnEnemyDeath(Enemy enemy)
+    {
+        if (_enemies.Contains(enemy))
+        {
+            _enemies.Remove(enemy);
+            _enemiesDefeatedThisWave++;
+            EnemyDefeated?.Invoke();
+
+            GD.Print($"Enemigo derrotado: {_enemiesDefeatedThisWave}/{_totalEnemiesForWave}");
+
+            if (_enemiesDefeatedThisWave >= _totalEnemiesForWave && _enemies.Count == 0)
+            {
+                if (_isLastWave && !_bossSpawned)
+                {
+                    SpawnBoss(_currentBossIndex);
+                }
+            }
+        }
+    }
+
+    private void SpawnBoss(int bossIndex)
+    {
+        if (_bossScenes == null || _bossScenes.Length == 0)
+        {
+            GD.PrintErr("No hay escenas de jefe configuradas!");
+            return;
+        }
+
+        _currentBossIndex = bossIndex % _bossScenes.Length;
+        var boss = _bossScenes[_currentBossIndex].Instantiate<Enemy>();
+
+        var stats = new EnemyStats
+        {
+            Speed = (int)(_currentDifficulty.EnemySpeedMultiplier * 0.7f),
+            Health = (int)(_currentDifficulty.EnemyHealthMultiplier * 5f),
+            Damage = (int)(_currentDifficulty.EnemyDamageMultiplier * 2f),
+            AttackCooldown = _currentDifficulty.EnemyAtackCooldownMultiplier * 0.8f,
+            ProjectileSpeed = GD.RandRange(200f, 300f),
+            TileSize = (int)_tileMap.TileSet.TileSize.X,
+        };
+
+        boss.Initialize(_player, stats, _tileMap);
+        boss.Death += OnEnemyDeath;
+        boss.GlobalPosition = GetCenteredPositionInRandomValidTile();
+        boss.Scale = new Vector2(1.5f, 1.5f);
+
+        AddChild(boss);
+        _enemies.Add(boss);
+        _bossSpawned = true;
+
+        GD.Print($"¡JEFE {_currentBossIndex} HA APARECIDO!");
+    }
+
+    public bool HasActiveBoss()
+    {
+        return _bossSpawned && _enemies.Any(e => IsInstanceValid(e));
+    }
+
+    public bool IsBossDefeated()
+    {
+        return _bossSpawned && !_enemies.Any(e => IsInstanceValid(e));
     }
 
     public void ClearEnemies()
@@ -113,7 +178,7 @@ public partial class EnemyManager : Node2D
         _spawnTimer.Stop();
         _waveActive = false;
 
-        foreach (var enemy in _enemies)
+        foreach (var enemy in _enemies.ToList())
         {
             if (IsInstanceValid(enemy))
             {
@@ -122,9 +187,24 @@ public partial class EnemyManager : Node2D
             }
         }
         _enemies.Clear();
-        _enemiesSpawned = 0;
+        _enemiesSpawnedThisWave = 0;
         _totalEnemiesForWave = 0;
+        _enemiesDefeatedThisWave = 0;
     }
+
+    public int GetEnemyCount()
+    {
+        _enemies.RemoveAll(enemy => !IsInstanceValid(enemy));
+        return _enemies.Count;
+    }
+
+    public bool HasWaveCompleted()
+    {
+        return _enemiesSpawnedThisWave >= _totalEnemiesForWave &&
+               _enemiesDefeatedThisWave >= _totalEnemiesForWave &&
+               _enemies.Count == 0;
+    }
+
     private Vector2 GetCenteredPositionInRandomValidTile()
     {
         var usedRect = _tileMap.GetUsedRect();
@@ -143,28 +223,9 @@ public partial class EnemyManager : Node2D
                 IsTooCloseToPlayer(tilePosition, playerTile)) &&
                 attempts < 100);
 
-        return CalculateCenteredPosition(tilePosition);
-    }
-
-    private Vector2 CalculateCenteredPosition(Vector2I tilePosition)
-    {
-        // 1. Obtener posición base del tile
-        Vector2 tileWorldPos = _tileMap.MapToLocal(tilePosition);
-
-        // 2. Obtener tamaño del tile
+        // Conversión explícita para evitar error de multiplicación
         Vector2 tileSize = _tileMap.TileSet.TileSize;
-
-        // 3. Calcular posición centrada exacta
-        Vector2 centeredPosition = tileWorldPos + (tileSize * 0.5f);
-
-        // 4. Ajuste extra si los tiles son cuadrados (opcional)
-        if (_tileMap.TileSet.TileShape == TileSet.TileShapeEnum.Square)
-        {
-            centeredPosition -= new Vector2(tileSize.X * 0.5f, tileSize.Y * 0.5f);
-        }
-
-        GD.Print($"Tile: {tilePosition} | WorldPos: {tileWorldPos} | Centered: {centeredPosition}");
-        return centeredPosition;
+        return _tileMap.MapToLocal(tilePosition) + (tileSize * 0.5f);
     }
 
     private bool IsTileValid(Vector2I tilePos) =>
@@ -173,27 +234,8 @@ public partial class EnemyManager : Node2D
     private bool IsTooCloseToPlayer(Vector2I tilePos, Vector2I playerTile) =>
         playerTile.DistanceTo(tilePos) < MinDistanceToPlayer;
 
-    public int GetEnemyCount()
+    public void SetCurrentMapIndex(int mapIndex)
     {
-        // Primero limpia la lista de enemigos de cualquier null
-        _enemies.RemoveAll(enemy => !IsInstanceValid(enemy));
-
-        GD.Print($"Enemigos reales en lista: {_enemies.Count}");
-        GD.Print($"Hijos directos del EnemyManager: {GetChildCount()}");
-
-        return _enemies.Count;
-    }
-    
-    public bool HasWaveCompleted()
-    {
-        bool completed = _enemiesSpawnedThisWave >= _totalEnemiesForWave &&
-                        _enemiesDefeatedThisWave >= _totalEnemiesForWave &&
-                        _enemies.Count == 0;
-
-        GD.Print($"Verificando oleada completada: Generados={_enemiesSpawnedThisWave}/{_totalEnemiesForWave}, " +
-                $"Derrotados={_enemiesDefeatedThisWave}/{_totalEnemiesForWave}, " +
-                $"Activos={_enemies.Count}");
-
-        return completed;
+        _currentBossIndex = mapIndex;
     }
 }

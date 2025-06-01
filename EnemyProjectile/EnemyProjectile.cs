@@ -7,14 +7,7 @@ public partial class EnemyProjectile : Area2D
     private double _speed;
     private double _damage;
 
-    //public void Initialize(Vector2 position, Vector2 direction, float speed, int damage)
-    //{
-    //    _direction = direction.Normalized();
-    //    _speed = speed;
-    //    _damage = damage;
-    //    Rotation = _direction.Angle();
-    //}
-    private TileMapLayer _tileMap;
+    protected TileMapLayer _tileMap;
 
     public void Initialize(Vector2 position, Vector2 direction, float speed, int damage, TileMapLayer tileMap)
     {

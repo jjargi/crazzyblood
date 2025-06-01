@@ -14,18 +14,18 @@ public partial class Enemy : CharacterBody2D
     [Export] public PackedScene ProjectileScene;
 
     // Nodos
-    private AnimatedSprite2D _sprite;
+    protected AnimatedSprite2D _sprite;
     private HBoxContainer _healthContainer;
-    private Timer _jumpTimer;
-    private Timer _attackTimer;
+    protected Timer _jumpTimer;
+    protected Timer _attackTimer;
 
     // Estado
-    private Player _player;
-    private int _currentHealth;
-    private bool _isDying = false;
+    protected Player _player;
+    protected int _currentHealth;
+    protected bool _isDying = false;
     private bool _isTakingDamage = false;
     private ColorRect[] _lifeRects;
-    private TileMapLayer _tileMap;
+    protected TileMapLayer _tileMap;
     public event Action<Enemy> Death;
 
 
@@ -45,7 +45,6 @@ public partial class Enemy : CharacterBody2D
     {
         _sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         _healthContainer = GetNode<HBoxContainer>("HealthContainer");
-        _sprite.AnimationFinished += OnAnimationFinished;
         // Configurar barra de vida
         SetupHealthBar();
 
@@ -104,7 +103,7 @@ public partial class Enemy : CharacterBody2D
         _attackTimer.Start();
     }
 
-    private void OnJumpTimerTimeout()
+    protected virtual void OnJumpTimerTimeout()
     {
         if (_isDying || _player == null || !IsInstanceValid(_player)) return;
 
@@ -124,7 +123,7 @@ public partial class Enemy : CharacterBody2D
         _sprite.FlipH = move.X < 0;
     }
 
-    private void OnAttackTimerTimeout()
+    protected virtual void OnAttackTimerTimeout()
     {
         if (_isDying || _player == null || !IsInstanceValid(_player)) return;
 
@@ -147,7 +146,7 @@ public partial class Enemy : CharacterBody2D
         );
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         if (_isDying || _isTakingDamage) return;
 
@@ -192,12 +191,4 @@ public partial class Enemy : CharacterBody2D
         QueueFree();
     }
 
-    private void OnAnimationFinished()
-    {
-        //if (_sprite.Animation == "explosion")
-        //{
-        //    Death?.Invoke(this);
-        //    QueueFree();
-        //}
-    }
 }

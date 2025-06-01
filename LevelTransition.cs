@@ -34,7 +34,8 @@ public partial class LevelTransition : CanvasLayer
     }
 
     public void ShowTransition(int currentLevel, int nextLevel, float levelTime,
-                        string difficulty, List<EnemyData> enemies, Action onComplete)
+                        string difficulty, List<EnemyData> enemies, Action onComplete,
+                        int bossIndex = -1) // Parámetro opcional
     {
         // Configurar textos
         _titleLabel.Text = $"Nivel {currentLevel} Completado!";
@@ -43,28 +44,25 @@ public partial class LevelTransition : CanvasLayer
 
         // Formatear información de enemigos con BBCode
         string enemiesText = "[center]Próximos enemigos:";
+
+        // Añadir información especial si hay jefe
+        if (bossIndex >= 0)
+        {
+            enemiesText += $"\n\n[color=yellow]¡Jefe especial en el nivel {nextLevel}![/color]";
+        }
+
         foreach (var enemy in enemies)
         {
-            enemiesText += $"\n• {enemy.Type} (x{enemy.Count}): {enemy.Health}HP, {enemy.Damage} daño";
+            enemiesText += $"\n• {enemy.Type} (x{enemy.Count}): {enemy.Health:F0}HP, {enemy.Damage:F0} daño";
         }
         enemiesText += "[/center]";
         _enemiesLabel.Text = enemiesText;
 
-        // Iniciar animación
+        // Resto del método permanece igual...
         Visible = true;
-        // Asegurarse que todos los elementos están visibles
-        _titleLabel.Show();
-        _infoLabel.Show();
-        _enemiesLabel.Show();
-        _nextLevelLabel.Show();
-        _countdownBar.Show();
-
-
-        // Configurar barra de progreso
-        // Configurar valores iniciales
         _countdownBar.MaxValue = 100;
         _countdownBar.Value = 100;
-        // Crear la animación
+
         var tween = GetTree().CreateTween();
         tween.TweenProperty(_countdownBar, "value", 0, _duration)
              .SetTrans(Tween.TransitionType.Linear)
@@ -74,7 +72,6 @@ public partial class LevelTransition : CanvasLayer
             onComplete?.Invoke();
             QueueFree();
         };
-
     }
 
     public override void _Process(double delta)

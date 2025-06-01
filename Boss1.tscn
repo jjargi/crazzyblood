@@ -1,0 +1,82 @@
+[gd_scene load_steps=15 format=3 uid="uid://ld0jlmbrwp2n"]
+
+[ext_resource type="Script" uid="uid://cgr5xje66ydjh" path="res://Boss1.cs" id="1_qthot"]
+[ext_resource type="PackedScene" uid="uid://20o52uv8wb1v" path="res://SinusoidalProjectile.tscn" id="2_c0ouu"]
+[ext_resource type="Texture2D" uid="uid://b38mmxapd5rta" path="res://s_enemy2.png" id="2_g25ec"]
+[ext_resource type="Texture2D" uid="uid://b5y7spa8al0lr" path="res://s_enemy3.png" id="3_c0ouu"]
+[ext_resource type="Texture2D" uid="uid://bj05xns2s34j2" path="res://s_enemy4.png" id="4_t6x8y"]
+[ext_resource type="Texture2D" uid="uid://6yjong0423a6" path="res://s_enemy.png" id="5_0ikit"]
+[ext_resource type="Texture2D" uid="uid://deogrr5k1bw32" path="res://s_enemy_explosion1.png" id="6_ftpd6"]
+[ext_resource type="Texture2D" uid="uid://drqfn0kaogjak" path="res://s_enemy_explosion2.png" id="7_g534c"]
+[ext_resource type="Texture2D" uid="uid://dildgbxfw7wgp" path="res://s_enemy_explosion3.png" id="8_afyo4"]
+[ext_resource type="Texture2D" uid="uid://cu1h8sjkmfs6a" path="res://s_enemy_explosion4.png" id="9_j4v56"]
+[ext_resource type="Texture2D" uid="uid://b6unlec7vherb" path="res://s_enemy_explosion5.png" id="10_f581p"]
+[ext_resource type="Texture2D" uid="uid://dopxl5qtqlaxp" path="res://s_enemy_explosion6.png" id="11_5wvku"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cg3tl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g25ec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c0ouu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t6x8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ikit")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ftpd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g534c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_afyo4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j4v56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_f581p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5wvku")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hmvua"]
+radius = 32.1403
+
+[node name="Boss1" type="CharacterBody2D"]
+script = ExtResource("1_qthot")
+_sinusoidalProjectileScene = ExtResource("2_c0ouu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cg3tl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hmvua")
+metadata/_edit_group_ = true
+
+[node name="HealthContainer" type="HBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = -42.0
+offset_bottom = -42.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+metadata/_edit_group_ = true

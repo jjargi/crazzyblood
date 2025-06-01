@@ -37,18 +37,6 @@ public partial class BasicProjectile : BaseProjectile
 
     }
 
-    //private void SetupTimer()
-    //{
-    //    _lifetimeTimer = new Timer();
-    //    AddChild(_lifetimeTimer);
-    //    _lifetimeTimer.Timeout += OnTimerEnd;
-    //    _lifetimeTimer.Start(MaxLifetime);
-    //}
-
-    //private void OnTimerEnd()
-    //{
-    //    QueueFree();
-    //}
 
     // 6. Manejo de señales
     private bool _hasHit = false; // Añade este campo
