@@ -109,7 +109,7 @@ public partial class GameBoard : Node2D
         {
             EnemyHealthMultiplier = _currentLevel * 1f,
             EnemySpeedMultiplier = Mathf.Max(0.1f, 4 - (_currentLevel * 0.5f)),
-            SpawnRateMultiplier = Mathf.Max(0.5f, 2 - (_currentLevel * 0.5f)),
+            SpawnRateMultiplier = Mathf.Max(0.5f, 1 - (_currentLevel * 0.5f)),
             EnemyDamageMultiplier = _currentLevel,
             EnemyAtackCooldownMultiplier = Mathf.Max(0.5f, 4 - (_currentLevel * 0.5f)),
         };
@@ -135,23 +135,33 @@ public partial class GameBoard : Node2D
     {
         _totalEnemiesDefeatedInWave++;
 
-        if (_totalEnemiesDefeatedInWave >= _enemiesPerWave && _enemyManager.GetEnemyCount() == 0)
+        // Verificar si se completó la oleada actual
+        bool waveCompleted = _totalEnemiesDefeatedInWave >= _enemiesPerWave &&
+                           _enemyManager.GetEnemyCount() == 0;
+
+        if (waveCompleted)
         {
             if (_currentWave >= _wavesPerLevel)
             {
-                // Solo avanzar si no hay jefe o fue derrotado
-                if (!_enemyManager.HasActiveBoss() || _enemyManager.IsBossDefeated())
+                // Si es la última oleada, verificar estado del jefe
+                if (_enemyManager.IsBossDefeated())
                 {
+                    // Solo avanzar si el jefe fue derrotado
                     AdvanceToNextLevel();
+                }
+                else if (!_enemyManager.HasActiveBoss())
+                {
+                    // Si no hay jefe activo pero debería haber uno, generarlo
+                    _enemyManager.SpawnBoss(_currentMapIndex);
                 }
             }
             else
             {
+                // Si no es la última oleada, pasar a la siguiente
                 StartNextWave();
             }
         }
     }
-
 
     private void AdvanceToNextLevel()
     {

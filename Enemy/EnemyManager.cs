@@ -130,7 +130,7 @@ public partial class EnemyManager : Node2D
         }
     }
 
-    private void SpawnBoss(int bossIndex)
+    public void SpawnBoss(int bossIndex)
     {
         if (_bossScenes == null || _bossScenes.Length == 0)
         {
@@ -223,11 +223,22 @@ public partial class EnemyManager : Node2D
                 IsTooCloseToPlayer(tilePosition, playerTile)) &&
                 attempts < 100);
 
-        // Conversión explícita para evitar error de multiplicación
+        // Obtener la posición global del centro del tile
+        Vector2 tileWorldPos = _tileMap.MapToLocal(tilePosition);
         Vector2 tileSize = _tileMap.TileSet.TileSize;
-        return _tileMap.MapToLocal(tilePosition) + (tileSize * 0.5f);
-    }
 
+        // Calcular posición centrada exacta
+        Vector2 centeredPosition = tileWorldPos + (tileSize * 0.5f);
+
+        // Ajuste adicional para tiles cuadrados
+        if (_tileMap.TileSet.TileShape == TileSet.TileShapeEnum.Square)
+        {
+            centeredPosition -= new Vector2(tileSize.X * 0.5f, tileSize.Y * 0.5f);
+        }
+
+        GD.Print($"Tile: {tilePosition} | WorldPos: {tileWorldPos} | Centered: {centeredPosition}");
+        return centeredPosition;
+    }
     private bool IsTileValid(Vector2I tilePos) =>
         _tileMap.GetCellSourceId(tilePos) != -1;
 

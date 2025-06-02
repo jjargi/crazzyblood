@@ -11,6 +11,7 @@ public partial class EnemyProjectile : Area2D
 
     public void Initialize(Vector2 position, Vector2 direction, float speed, int damage, TileMapLayer tileMap)
     {
+        Position = position; // <-- Esta línea es clave
         _direction = direction.Normalized();
         _speed = speed;
         _damage = damage;

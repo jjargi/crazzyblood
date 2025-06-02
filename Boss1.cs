@@ -90,7 +90,7 @@ public partial class Boss1 : Enemy
     public override void TakeDamage(int damage)
     {
         // El boss recibe menos daño (opcional)
-        base.TakeDamage((int)(damage * 0.7f));
+        base.TakeDamage((int)(damage));
 
         // Efecto visual adicional
         if (_currentHealth > 0)
