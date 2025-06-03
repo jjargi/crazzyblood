@@ -4,9 +4,10 @@ using System;
 public partial class Boss1 : Enemy
 {
     // Configuración especial del boss
-    [Export] private float _waveAmplitude = 50f;
-    [Export] private float _waveFrequency = 2f;
-    [Export] private PackedScene _sinusoidalProjectileScene;
+    [Export] private float _waveAmplitude = 128f;
+    [Export] private float _waveFrequency = 8f;
+    // Usamos la propiedad pública heredada, reutilizable para cualquier proyectil
+    [Export] public override PackedScene ProjectileScene { get; set; }
 
     private float _timeSinceLastAttack = 0f;
     private Vector2 _initialPosition;
@@ -71,7 +72,7 @@ public partial class Boss1 : Enemy
 
     private void ShootSinusoidalProjectile()
     {
-        var projectile = _sinusoidalProjectileScene.Instantiate<SinusoidalProjectile>();
+        var projectile = ProjectileScene.Instantiate<SinusoidalProjectile>();
         GetParent().AddChild(projectile);
 
         Vector2 direction = (_player.GlobalPosition - GlobalPosition).Normalized();

@@ -11,7 +11,9 @@ public partial class Enemy : CharacterBody2D
     [Export] public float TileSize = 64f;
     [Export] public float AttackCooldown = 3f;
     [Export] public float ProjectileSpeed = 200f;
-    [Export] public PackedScene ProjectileScene;
+    //[Export] public PackedScene ProjectileScene;
+    // Línea donde defines la escena del proyectil como propiedad virtual
+    [Export] public virtual PackedScene ProjectileScene { get; set; }
 
     // Nodos
     protected AnimatedSprite2D _sprite;
