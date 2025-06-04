@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=4 uid="uid://c0c21c1bgum0o"]
 
-[ext_resource type="Texture2D" uid="uid://hqe0abrepaeq" path="res://background_c.png" id="1_ykeum"]
-[ext_resource type="Texture2D" uid="uid://bnmqu0hdmbnpg" path="res://background_c_mouse.png" id="2_xbllo"]
+[ext_resource type="Texture2D" uid="uid://dh2xudjxqgn6h" path="res://Tiles/map tile sand.png" id="1_xbllo"]
+[ext_resource type="Texture2D" uid="uid://cifefgy41qfat" path="res://Tiles/ocean.png" id="2_tltqh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xbllo"]
-texture = ExtResource("1_ykeum")
+texture = ExtResource("1_xbllo")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -24,7 +24,7 @@ texture_region_size = Vector2i(64, 64)
 3:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tltqh"]
-texture = ExtResource("2_xbllo")
+texture = ExtResource("2_tltqh")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 

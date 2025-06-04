@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkae26dw33j2e"]
 
 [ext_resource type="Script" uid="uid://bx7dqjcfuvv0v" path="res://EnemyProjectile/EnemyProjectile.cs" id="1_ul6jj"]
-[ext_resource type="Texture2D" uid="uid://didtfingnh3u1" path="res://e_missile.png" id="2_08apu"]
+[ext_resource type="Texture2D" uid="uid://didtfingnh3u1" path="res://Tiles/e_missile.png" id="2_08apu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e7peq"]
 radius = 12.0

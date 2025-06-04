@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://4em8t0e75sot"]
 
 [ext_resource type="Script" uid="uid://dl8ssrjaund36" path="res://Projectile/ExplosionEffect.cs" id="1_7tjr4"]
-[ext_resource type="Texture2D" uid="uid://deogrr5k1bw32" path="res://s_enemy_explosion1.png" id="2_38ywx"]
-[ext_resource type="Texture2D" uid="uid://drqfn0kaogjak" path="res://s_enemy_explosion2.png" id="3_g1lef"]
-[ext_resource type="Texture2D" uid="uid://dildgbxfw7wgp" path="res://s_enemy_explosion3.png" id="4_iq7np"]
-[ext_resource type="Texture2D" uid="uid://cu1h8sjkmfs6a" path="res://s_enemy_explosion4.png" id="5_qrgrf"]
-[ext_resource type="Texture2D" uid="uid://b6unlec7vherb" path="res://s_enemy_explosion5.png" id="6_jumct"]
-[ext_resource type="Texture2D" uid="uid://dopxl5qtqlaxp" path="res://s_enemy_explosion6.png" id="7_lig7j"]
+[ext_resource type="Texture2D" uid="uid://deogrr5k1bw32" path="res://Tiles/s_enemy_explosion1.png" id="2_38ywx"]
+[ext_resource type="Texture2D" uid="uid://drqfn0kaogjak" path="res://Tiles/s_enemy_explosion2.png" id="3_g1lef"]
+[ext_resource type="Texture2D" uid="uid://dildgbxfw7wgp" path="res://Tiles/s_enemy_explosion3.png" id="4_iq7np"]
+[ext_resource type="Texture2D" uid="uid://cu1h8sjkmfs6a" path="res://Tiles/s_enemy_explosion4.png" id="5_qrgrf"]
+[ext_resource type="Texture2D" uid="uid://b6unlec7vherb" path="res://Tiles/s_enemy_explosion5.png" id="6_jumct"]
+[ext_resource type="Texture2D" uid="uid://dopxl5qtqlaxp" path="res://Tiles/s_enemy_explosion6.png" id="7_lig7j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kj4qk"]
 animations = [{

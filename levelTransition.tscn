@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://btids5uoi3rnv"]
 
 [ext_resource type="Script" uid="uid://crdfk62c0ev7e" path="res://LevelTransition.cs" id="1_hl5l1"]
-[ext_resource type="Texture2D" uid="uid://crl3uei17eu2o" path="res://progressbar_under.png" id="2_kqtbd"]
-[ext_resource type="Texture2D" uid="uid://bu4rqvwnfyrf0" path="res://progressbar_over2.png" id="3_kqtbd"]
-[ext_resource type="Texture2D" uid="uid://b4k34q5leny3g" path="res://progressbar_progress.png" id="4_jgew0"]
+[ext_resource type="Texture2D" uid="uid://crl3uei17eu2o" path="res://Tiles/progressbar_under.png" id="2_kqtbd"]
+[ext_resource type="Texture2D" uid="uid://bu4rqvwnfyrf0" path="res://Tiles/progressbar_over2.png" id="3_kqtbd"]
+[ext_resource type="Texture2D" uid="uid://b4k34q5leny3g" path="res://Tiles/progressbar_progress.png" id="4_jgew0"]
 
 [node name="LevelTransition" type="CanvasLayer"]
 script = ExtResource("1_hl5l1")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://bdori5dv4t1pi"]
 
-[ext_resource type="Texture2D" uid="uid://bnmqu0hdmbnpg" path="res://background_c_mouse.png" id="1_1ctk0"]
-[ext_resource type="Texture2D" uid="uid://hqe0abrepaeq" path="res://background_c.png" id="1_w4y6q"]
+[ext_resource type="Texture2D" uid="uid://bnmqu0hdmbnpg" path="res://Tiles/background_c_mouse.png" id="1_1ctk0"]
+[ext_resource type="Texture2D" uid="uid://cmfkbsovttxvs" path="res://Tiles/farmland.png" id="2_1ctk0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dm508"]
 texture = ExtResource("1_1ctk0")
@@ -9,7 +9,7 @@ texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ctk0"]
-texture = ExtResource("1_w4y6q")
+texture = ExtResource("2_1ctk0")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 

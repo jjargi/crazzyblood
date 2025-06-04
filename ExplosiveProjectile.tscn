@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://yuyu2cn784bi"]
 
 [ext_resource type="Script" uid="uid://c5kelcjscq8da" path="res://Projectile/ExplosiveProjectile.cs" id="1_p1qv7"]
-[ext_resource type="Texture2D" uid="uid://bn5vvkqgmbxao" path="res://sExplosiveMissil.png" id="2_4t6tc"]
+[ext_resource type="Texture2D" uid="uid://bn5vvkqgmbxao" path="res://Tiles/sExplosiveMissil.png" id="2_4t6tc"]
 [ext_resource type="PackedScene" uid="uid://4em8t0e75sot" path="res://ExplosionEffect.tscn" id="2_22t7q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yulam"]
