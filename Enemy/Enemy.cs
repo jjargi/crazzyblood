@@ -118,13 +118,53 @@ public partial class Enemy : CharacterBody2D
         else
             move.Y = Mathf.Sign(diff.Y); // Movimiento vertical
 
-        // Mover exactamente 1 celda
-        GlobalPosition += move * TileSize;
+        // Verificar si la celda destino es válida
+        Vector2I currentTile = _tileMap.LocalToMap(GlobalPosition);
+        Vector2I targetTile = currentTile + new Vector2I((int)move.X, (int)move.Y);
 
-        // Actualizar dirección del sprite
-        _sprite.FlipH = move.X < 0;
+        if (IsTileValid(targetTile))
+        {
+            // Mover exactamente 1 celda solo si el destino es válido
+            GlobalPosition += move * TileSize;
+            _sprite.FlipH = move.X < 0;
+        }
+        else
+        {
+            // Opcional: Intentar movimiento alternativo si el principal no es válido
+            TryAlternativeMove(currentTile);
+        }
     }
 
+    private bool IsTileValid(Vector2I tilePos)
+    {
+        // Verificar que la celda existe y no está vacía (sourceId != -1)
+        return _tileMap.GetCellSourceId(tilePos) != -1;
+    }
+
+    private void TryAlternativeMove(Vector2I currentTile)
+    {
+        // Intentar movimientos alternativos en caso de colisión
+        Vector2[] possibleMoves = {
+        Vector2.Up,
+        Vector2.Down,
+        Vector2.Left,
+        Vector2.Right
+    };
+
+        foreach (var move in possibleMoves)
+        {
+            Vector2I targetTile = currentTile + new Vector2I((int)move.X, (int)move.Y);
+            if (IsTileValid(targetTile))
+            {
+                GlobalPosition += move * TileSize;
+                _sprite.FlipH = move.X < 0;
+                return;
+            }
+        }
+
+        // Si no hay movimientos válidos, el enemigo se queda en su lugar
+        GD.Print("Enemigo bloqueado - no hay movimientos válidos");
+    }
     protected virtual void OnAttackTimerTimeout()
     {
         if (_isDying || _player == null || !IsInstanceValid(_player)) return;
